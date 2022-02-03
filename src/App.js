@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Loged from './pages/Loged';
+import Events from './pages/Events';
+import AddEvent from './pages/AddEvent';
+
+const routes = [
+    { path: '/login/:email', Component: Login },
+    { path: '/register/:email', Component: Register },
+    { path: '/loged/:email', Component: Loged },
+    { path: '/events/:email', Component: Events },
+    { path: '/add-event/:email', Component: AddEvent },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Suspense fallback={<span>Cargando...</span>}>
+            <Switch>
+                {routes.map(({ path, Component }) =>
+                    <Route
+                        key={path}
+                        path={path}
+                        component={Component}
+                    />)}
+            </Switch>
+        </Suspense>
+    );
 }
 
 export default App;
