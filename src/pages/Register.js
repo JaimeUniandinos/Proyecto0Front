@@ -32,7 +32,7 @@ const Login = ({ history }) => {
     return <div>
 
         <h4><b>Registro</b></h4>
-
+        <div onClick={() => history.push(`/login/email`)}>ir a Login</div>
         <div>
             <label>Usuario</label>
             <input value={email} onChange={event => setUser(event.target.value)} />

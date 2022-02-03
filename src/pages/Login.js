@@ -34,6 +34,8 @@ const Login = ({ history }) => {
 
         <h4><b>Login</b></h4>
 
+        <div onClick={() => history.push(`/register/email`)}>ir a registro</div>
+
         <div>
             <label>Usuario</label>
             <input value={email} onChange={event => setUser(event.target.value)} />

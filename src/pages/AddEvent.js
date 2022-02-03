@@ -10,7 +10,7 @@ const AddEvent = ({ history }) => {
     const addHandler = async () => {
 
         try {
-            await fetch('http://127.0.0.1:5000/event', {
+            await fetch('http://172.24.41.23:5000/event', {
                 method: 'POST',
                 body: JSON.stringify({ email, name, hora }),
                 headers: {

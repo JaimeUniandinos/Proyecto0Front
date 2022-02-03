@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -25,6 +25,7 @@ function App() {
                         path={path}
                         component={Component}
                     />)}
+            <Route path="*"><Redirect to="/login/email"/></Route>
             </Switch>
         </Suspense>
     );
