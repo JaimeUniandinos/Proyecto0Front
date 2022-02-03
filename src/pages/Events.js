@@ -9,7 +9,7 @@ const Events = ({ history }) => {
     useEffect(() => {
         const get = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:5000/show/events', {
+                const response = await fetch('http://172.24.41.23:5000/show/events', {
                     method: 'POST',
                     body: JSON.stringify({ email }),
                     headers: {
@@ -29,7 +29,7 @@ const Events = ({ history }) => {
     const deleteHandler = async (name) => {
 
         try {
-            await fetch('http://127.0.0.1:5000/delete/event', {
+            await fetch('http://172.24.41.23:5000/delete/event', {
                 method: 'POST',
                 body: JSON.stringify({ email, name }),
                 headers: {
@@ -50,7 +50,7 @@ const Events = ({ history }) => {
         try {
             for (const { name, hora } of events) {
 
-                await fetch('http://127.0.0.1:5000/edit/event', {
+                await fetch('http://172.24.41.23:5000/edit/event', {
                     method: 'POST',
                     body: JSON.stringify({ email, name, hora }),
                     headers: {

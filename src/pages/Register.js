@@ -7,7 +7,7 @@ const Login = ({ history }) => {
     const loginHandler = async () => {
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/users', {
+            const response = await fetch('http://172.24.41.23:5000/users', {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {
